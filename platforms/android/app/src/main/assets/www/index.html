@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+    Name: Emmanuel Farrar  
+    Date: 4/23/2020
+    Title: U02A1 User Interfaces
+
+    Description:
+
+-->
+<html>
+
+<head>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+
+    <title>U2A1_UserInterface</title>
+    <style>
+        #container 
+        {
+            margin: 5px;
+        }
+    </style>
+    <script>
+
+        window.onload = function() {
+
+        }
+        
+        </script>
+
+</head>
+
+<body>
+    <div id="container">
+        <p>U2A1 UserInterface</P>
+            <div id="error"></div>
+            <div id= "form">
+                <form onsubmit="submitData()" action="/" >
+                    <div>
+                        <label for="studentname">Student Name:</label>
+                        <input 
+                            type="text" 
+                            id="studentname" 
+                            name="studentname" 
+                            placeholder="Joe Smith"
+                            required><br>
+                    </div>
+                        
+                    <div>
+                        <label for="coursename">Course:</label>
+                        <input 
+                            type="text" 
+                            id="coursename" 
+                            name="coursename" 
+                            placeholder="IT4786 or Cross Platform Mobile App Dev"
+                            required><br>
+                    </div>
+                    
+                    <div>
+                        <label for="registerationdate">Registration Date:</label>
+                        <input 
+                            type="text" 
+                            id="registerationdate" 
+                            name="registerationdate" 
+                            placeholder="DD/MM/YYYY"
+                            required><br>
+                    </div>
+
+                    <div>
+                        <button id="btn" type="submit">Register for this Course</button>
+                    </div>
+                    
+                </form>
+            </div>
+    </div>
+
+</body>

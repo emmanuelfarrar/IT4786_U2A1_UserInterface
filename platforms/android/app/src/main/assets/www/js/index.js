@@ -1,0 +1,40 @@
+//global variables
+const tx_StudentName = document.getElementById("studentname");
+const tx_CourseName = document.getElementById("coursename");
+const tx_RegDate = document.getElementById("registrationdate")
+const errorChecker = getElementById("error");
+
+/*
+var regex = new RegExp(/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/);
+var res = regex.test(tx_RegDate);
+
+//Event listner for the form
+form.addEventListener("submit", (e) => {
+
+    let messages = [];
+    if (name.value ==="" || name.value == null) {
+        messages.push("Student name is is required");
+    }
+
+    if (res != true) {
+        messages.push("Date format needs to be DD/MM/YY");
+    }
+
+    if (messages.length > 0) {
+        e.preventDefault();
+        errorChecker.innerText = messages.join(", ");
+    }
+});
+*/
+
+function submitData(){
+    var x = document.getElementById("form");
+    x[0].submit();
+    alert("Name: " + tx_StudentName + " is registered for "+ tx_CourseName +".");
+
+    return true;
+}
+
+
+
+
