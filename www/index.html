@@ -16,15 +16,15 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link rel="stylesheet" href="css/index.css" />
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.5.js"></script>
     
 
     <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
 
     <title>U2A1_UserInterface</title>
@@ -33,12 +33,68 @@
         {
             margin: 5px;
         }
+            
+        body{
+            background-color: #e8f3f8;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 25px;
+            color: steelblue;
+        }
+
+        form {
+            margin: 20px auto;
+            width: 90%;
+            color: steelblue;
+            max-width: 400px;
+        }
+
+        label {
+            font-size: 30px;
+            color: steelblue;
+        }
+
+        input {
+            padding: 10px;
+            font-size: inherit;
+        }
+
+        button {
+            width: 50%;
+            height: 50px;
+            border: none;
+            border-radius: 5px;
+            background-color: steelblue;
+            color: white;
+        }
+
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            color: steelblue;  
+        }
+
     </style>
     <script>
+        function validate() {
 
-        window.onload = function() {
+            //creating objects from elements from HTML to extract values
+            const studentName = document.getElementById("studentname");
+            const courseName = document.getElementById("coursename");
+            const regDate = document.getElementById("registerationdate");
 
-        }
+            alert("Name: " + studentName.value + " is registered for "+ courseName.value + 
+                    " scheduled to start on "+ regDate.value +".");
+                
+        }       //end validate()
+
+
         
         </script>
 
@@ -46,12 +102,12 @@
 
 <body>
     <div id="container">
-        <p>U2A1 UserInterface</P>
+        <h1>U2A1 UserInterface</h1>
             <div id="error"></div>
-            <div id= "form">
-                <form onsubmit="submitData()" action="/" >
+            <div id= "div_form">
+                <form id = "form" onsubmit="validate()" action="index.html" method="POST">
                     <div>
-                        <label for="studentname">Student Name:</label>
+                        <label>Student Name:</label>
                         <input 
                             type="text" 
                             id="studentname" 
@@ -61,7 +117,7 @@
                     </div>
                         
                     <div>
-                        <label for="coursename">Course:</label>
+                        <label>Course:</label>
                         <input 
                             type="text" 
                             id="coursename" 
@@ -71,7 +127,7 @@
                     </div>
                     
                     <div>
-                        <label for="registerationdate">Registration Date:</label>
+                        <label>Registration Date:</label>
                         <input 
                             type="text" 
                             id="registerationdate" 
@@ -81,11 +137,12 @@
                     </div>
 
                     <div>
-                        <button id="btn" type="submit">Register for this Course</button>
+                        <button type="submit" name="submit">Register for this Course</button>
                     </div>
                     
                 </form>
             </div>
+            <footer>Emmanuel Farrar / IT4782 / Capella University</footer>
     </div>
 
 </body>

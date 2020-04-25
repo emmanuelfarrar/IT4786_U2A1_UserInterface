@@ -1,8 +1,3 @@
-//global variables
-const tx_StudentName = document.getElementById("studentname");
-const tx_CourseName = document.getElementById("coursename");
-const tx_RegDate = document.getElementById("registrationdate")
-const errorChecker = getElementById("error");
 
 /*
 var regex = new RegExp(/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/);
@@ -27,13 +22,6 @@ form.addEventListener("submit", (e) => {
 });
 */
 
-function submitData(){
-    var x = document.getElementById("form");
-    x[0].submit();
-    alert("Name: " + tx_StudentName + " is registered for "+ tx_CourseName +".");
-
-    return true;
-}
 
 
 
